@@ -1,8 +1,35 @@
 html{
-    background-color: rgb(85, 57, 4);
+    background-color: rgb(40, 9, 5);
 }
 
 header{
+    background-color: rgb(80, 38, 11);
     text-align: center;
+    width: 80%;
+    margin: auto;
     color: white;
+}
+
+section{
+    background-color: rgb(116, 10, 3);
+    width: 40%;
+    margin: auto;
+    padding: 1%;
+    border-radius: 2em;
+}
+
+article{
+    background-color: rgb(195, 17, 12);
+    width: 80%;
+    height: 10rem;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 1em;
+    transition: 0.3s;
+
+}
+
+article:hover{
+    width: 90%;
+    height: 15rem;
 }
