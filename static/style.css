@@ -21,7 +21,7 @@ section{
 article{
     background-color: rgb(195, 17, 12);
     width: 80%;
-    height: 10rem;
+    height: 15rem;
     margin: auto;
     margin-top: 1rem;
     border-radius: 1em;
@@ -31,7 +31,7 @@ article{
 
 article:hover{
     width: 90%;
-    height: 15rem;
+    height: 20rem;
 }
 
 button{

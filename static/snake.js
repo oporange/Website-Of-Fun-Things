@@ -1,8 +1,8 @@
 var canvas = document.getElementById("SnakeCanvas")
 var ctx = canvas.getContext("2d");
 
-var x = 0;
-var y = 0;
+var x = 10*50;
+var y = 6*50;
 
 var SnakeLength = 0;
 
@@ -17,6 +17,8 @@ var appleX = Math.floor(Math.random() * 20) * 50;
 var appleY = Math.floor(Math.random() * 12) * 50;
 
 // 1000 x 600 display, 20 x 12
+
+var running = true;
 
 document.addEventListener('keydown',
     function (event) {
@@ -52,6 +54,18 @@ function RandomApple() {
 }
 
 const loop = setInterval(() => {
+
+    if (!running) {
+        CurrentKeyPressed = null;
+        SnakeDirection = null;
+        x = 10*50;
+        y = 6*50;
+        SnakeLength = 0;
+        Snakes = [];
+        appleX = Math.floor(Math.random() * 20) * 50;
+        appleY = Math.floor(Math.random() * 12) * 50;
+        running = true;
+    }
 
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -93,6 +107,16 @@ const loop = setInterval(() => {
     if (x == appleX && y == appleY) {
         SnakeLength++;
         RandomApple();
+    }
+    
+    for (let i = 0; i < Snakes.length - 1; i++) {
+        if (Snakes[i].x == x && Snakes[i].y == y) {
+            running = false;
+            break;
+        }
+    }
+    if (x < 0 || x >= canvas.width || y < 0 || y >= canvas.height) {
+        running = false;
     }
 
 
